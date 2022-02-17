@@ -59,7 +59,6 @@ public class PostController {
                               ) {
         //public Boolean createPost(@RequestParam("file")MultipartFile files, @RequestBody PostDto postDto){
         try {
-            System.out.println("~~~ 1");
             String origFilename = files.getOriginalFilename();
             // 이미지를 파일로 저장하기 위한 name을 만든다.
             String filename = new MD5Generator(origFilename).toString();
@@ -208,17 +207,5 @@ public class PostController {
         }
         return true;
     }
-
-
-    // Long 으로 반환해서 뭐하려고
-//    @PatchMapping("/posts/{postId}")
-//    public Boolean updatePost(@PathVariable Long postId, @RequestBody PostRequestDto requestDto){
-//        return postService.updatePost(postId, requestDto);
-//    }
-
-//    @DeleteMapping("/posts/{postId}")
-//    public Boolean deletePost(@PathVariable Long postId){
-//        return postService.deletePostService(postId);
-//    }
 
 }
